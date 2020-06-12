@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.dagger_hilt.feature.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/toDetailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/toOtherActivity"
+            app:destination="@id/otherActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.dagger_hilt.feature.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="detailId"
+            app:argType="string" />
+    </fragment>
+
+    <activity
+        android:id="@+id/otherActivity"
+        android:name="com.example.dagger_hilt.feature.other.OtherActivity"
+        android:label="activity_other"
+        tools:layout="@layout/activity_other" >
+        <argument
+            android:name="text"
+            app:argType="string" />
+    </activity>
+
+</navigation>
