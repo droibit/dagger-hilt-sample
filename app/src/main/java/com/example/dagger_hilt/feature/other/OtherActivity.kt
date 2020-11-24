@@ -1,23 +1,25 @@
 package com.example.dagger_hilt.feature.other
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.observe
-import com.example.dagger_hilt.R
+import androidx.appcompat.app.AppCompatActivity
+import com.example.dagger_hilt.databinding.ActivityOtherBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_other.*
 
 @AndroidEntryPoint
-class OtherActivity : AppCompatActivity(R.layout.activity_other) {
+class OtherActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityOtherBinding
 
     private val viewModel: OtherViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityOtherBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         viewModel.text.observe(this) {
-            text.text = it
+            binding.text.text = it
         }
     }
 }

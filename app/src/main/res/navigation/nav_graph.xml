@@ -9,7 +9,7 @@
         android:id="@+id/mainFragment"
         android:name="com.example.dagger_hilt.feature.main.MainFragment"
         android:label="MainFragment"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/toDetailFragment"
             app:destination="@id/detailFragment" />
@@ -21,7 +21,7 @@
         android:id="@+id/detailFragment"
         android:name="com.example.dagger_hilt.feature.detail.DetailFragment"
         android:label="DetailFragment"
-        tools:layout="@layout/fragment_detail" >
+        tools:layout="@layout/fragment_detail">
         <argument
             android:name="detailId"
             app:argType="string" />
@@ -31,7 +31,7 @@
         android:id="@+id/otherActivity"
         android:name="com.example.dagger_hilt.feature.other.OtherActivity"
         android:label="activity_other"
-        tools:layout="@layout/activity_other" >
+        tools:layout="@layout/activity_other">
         <argument
             android:name="text"
             app:argType="string" />
