@@ -43,3 +43,7 @@ dependencies {
 
     testImplementation 'junit:junit:4.13.1'
 }
+
+kapt {
+    correctErrorTypes true
+}

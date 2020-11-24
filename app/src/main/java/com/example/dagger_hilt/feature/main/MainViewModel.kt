@@ -1,14 +1,16 @@
 package com.example.dagger_hilt.feature.main
 
 import androidx.annotation.UiThread
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.dagger_hilt.core.data.repository.SampleRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@HiltViewModel
 class MainViewModel(
     private val sampleRepository: SampleRepository,
     private val toastMessageSink: MutableLiveData<String>
@@ -16,10 +18,9 @@ class MainViewModel(
 
     val toastMessage: LiveData<String> get() = toastMessageSink
 
-    @ViewModelInject
+    @Inject
     constructor(
         sampleRepository: SampleRepository
-        //    @Assisted private val savedStateHandle: SavedStateHandle
     ) : this(
         sampleRepository,
         MutableLiveData()

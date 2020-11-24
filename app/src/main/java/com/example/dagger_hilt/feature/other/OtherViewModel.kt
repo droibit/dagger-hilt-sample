@@ -1,24 +1,23 @@
 package com.example.dagger_hilt.feature.other
 
-import androidx.hilt.Assisted
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+import javax.inject.Named
 
+@HiltViewModel
 class OtherViewModel(
-    private val textSink: MutableLiveData<String>
+    textSink: MutableLiveData<String>
 ) : ViewModel() {
 
     val text: LiveData<String> = textSink
 
-    @ViewModelInject
+    @Inject
     constructor(
-        @Assisted savedState: SavedStateHandle
+        @Named("otherText") text: String
     ) : this(
-        MutableLiveData(
-            requireNotNull(savedState["text"])
-        )
+        MutableLiveData(text)
     )
 }

@@ -1,4 +1,4 @@
-package com.example.dagger_hilt.feature.detail
+package com.example.dagger_hilt.feature.edit
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,7 +8,7 @@ import javax.inject.Inject
 import javax.inject.Named
 
 @HiltViewModel
-class DetailViewModel(
+class EditViewModel(
     textSink: MutableLiveData<String>
 ) : ViewModel() {
 
@@ -16,7 +16,7 @@ class DetailViewModel(
 
     @Inject
     constructor(
-        @Named("detailId") detailId: String
+        @Named("editId") detailId: String
     ) : this(
         MutableLiveData(detailId)
     )

@@ -1,10 +1,12 @@
 package com.example.dagger_hilt.feature
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import com.example.dagger_hilt.core.data.repository.SampleRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class NavGraphViewModel @ViewModelInject constructor(
+@HiltViewModel
+class NavGraphViewModel @Inject constructor(
     private val sampleRepository: SampleRepository
 ) : ViewModel() {
 

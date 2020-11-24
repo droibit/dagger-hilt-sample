@@ -10,9 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.dagger_hilt.databinding.FragmentMainBinding
 import com.example.dagger_hilt.feature.main.MainFragmentDirections.Companion.toDetailFragment
+import com.example.dagger_hilt.feature.main.MainFragmentDirections.Companion.toEditFragment
 import com.example.dagger_hilt.feature.main.MainFragmentDirections.Companion.toOtherActivity
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class MainFragment : Fragment() {
@@ -44,6 +44,10 @@ class MainFragment : Fragment() {
 
         binding.showDetailButton.setOnClickListener {
             findNavController().navigate(toDetailFragment(detailId = "detail-01"))
+        }
+
+        binding.showEditButton.setOnClickListener {
+            findNavController().navigate(toEditFragment(editId = "edit-02"))
         }
 
         binding.showOtherButton.setOnClickListener {

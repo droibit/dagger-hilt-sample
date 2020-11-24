@@ -16,6 +16,9 @@
         <action
             android:id="@+id/toOtherActivity"
             app:destination="@id/otherActivity" />
+        <action
+            android:id="@+id/toEditFragment"
+            app:destination="@id/editFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -25,6 +28,17 @@
         <argument
             android:name="detailId"
             app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.dagger_hilt.feature.edit.EditFragment"
+        android:label="EditFragment"
+        tools:layout="@layout/fragment_edit">
+        <argument
+            android:name="editId"
+            app:argType="string" />
+
     </fragment>
 
     <activity
