@@ -4,8 +4,8 @@ buildscript {
     kotlin_version = "1.4.21"
     coroutines_version = '1.4.2'
     lifecycle_version = '2.3.0-rc01'
-    navigation_version = '2.3.2'
-    dagger_version = '2.31-alpha'
+    navigation_version = '2.3.3'
+    dagger_version = '2.32-alpha'
     timber_version = '4.7.1'
   }
 
@@ -15,7 +15,7 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.android.tools.build:gradle:4.2.0-beta03"
+    classpath "com.android.tools.build:gradle:4.2.0-beta04"
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     classpath "com.google.dagger:hilt-android-gradle-plugin:$dagger_version"
     classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
