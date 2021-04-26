@@ -59,7 +59,7 @@ class MainFragment : Fragment() {
             findNavController().navigate(toOtherActivity(text = "Show OtherActivity"))
         }
 
-        navGraphViewModel.doSomething()
+        navGraphViewModel.enqueueWork()
     }
 
     override fun onDestroyView() {
