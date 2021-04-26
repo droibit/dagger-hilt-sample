@@ -1,36 +1,34 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-  ext {
-    kotlin_version = "1.4.30"
-    coroutines_version = '1.4.2'
-    lifecycle_version = '2.3.0'
-    navigation_version = '2.3.3'
-    dagger_version = '2.33-beta'
-    timber_version = '4.7.1'
-  }
+    ext {
+        kotlin_version = "1.4.32"
+        coroutines_version = '1.4.3'
+        lifecycle_version = '2.3.1'
+        navigation_version = '2.3.5'
+        dagger_version = '2.35'
+        timber_version = '4.7.1'
+    }
 
-  repositories {
-    google()
-    mavenCentral()
-    jcenter()
-  }
+    repositories {
+        google()
+        mavenCentral()
+    }
 
-  dependencies {
-    classpath "com.android.tools.build:gradle:4.2.0-beta05"
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    classpath "com.google.dagger:hilt-android-gradle-plugin:$dagger_version"
-    classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
-  }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.0-rc01'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$dagger_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
+    }
 }
 
 allprojects {
-  repositories {
-    google()
-    mavenCentral()
-    jcenter()
-  }
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
 
 task clean(type: Delete) {
-  delete rootProject.buildDir
+    delete rootProject.buildDir
 }
