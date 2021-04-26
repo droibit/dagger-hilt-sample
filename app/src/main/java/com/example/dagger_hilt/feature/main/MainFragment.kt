@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.hilt.navigation.fragment.hiltNavGraphViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.dagger_hilt.R
 import com.example.dagger_hilt.databinding.FragmentMainBinding
+import com.example.dagger_hilt.feature.NavGraphViewModel
 import com.example.dagger_hilt.feature.main.MainFragmentDirections.Companion.toDetailFragment
 import com.example.dagger_hilt.feature.main.MainFragmentDirections.Companion.toEditFragment
 import com.example.dagger_hilt.feature.main.MainFragmentDirections.Companion.toOtherActivity
@@ -21,6 +24,8 @@ class MainFragment : Fragment() {
     private val binding get() = requireNotNull(_binding)
 
     private val viewModel: MainViewModel by viewModels()
+
+    private val navGraphViewModel: NavGraphViewModel by hiltNavGraphViewModels(R.id.nav_graph)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,6 +58,8 @@ class MainFragment : Fragment() {
         binding.showOtherButton.setOnClickListener {
             findNavController().navigate(toOtherActivity(text = "Show OtherActivity"))
         }
+
+        navGraphViewModel.doSomething()
     }
 
     override fun onDestroyView() {
